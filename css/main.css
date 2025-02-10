@@ -120,3 +120,8 @@ body {
     top: 195px;
     left: 104px;
 }
+
+.game-cell[data-x="1"][data-y="2"] {
+    top: 195px;
+    left: 104px;
+}

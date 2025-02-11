@@ -18,12 +18,29 @@ body {
     justify-content: center;
 }
 
+.select-menu {
+    /* width: 50%; */
+}
+
+.select-button {
+    font-family: "Space Grotesk", serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--dark-purple);
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+}
+
 .game-board {
     position: relative;
 }
 
 .game-cell {
     position: absolute;
+    height: 70px;
+    width: 75px;
 }
 
 .game-cell[data-x="0"][data-y="0"] {
@@ -106,22 +123,132 @@ body {
     left: 104px;
 }
 
-.game-cell[data-x="1"][data-y="2"] {
+.game-cell[data-x="2"][data-y="2"] {
     top: 195px;
+    left: 195px;
+}
+
+.game-cell[data-x="3"][data-y="2"] {
+    top: 195px;
+    left: 280px;
+}
+
+.game-cell[data-x="4"][data-y="2"] {
+    top: 195px;
+    left: 370px;
+}
+
+.game-cell[data-x="5"][data-y="2"] {
+    top: 195px;
+    left: 455px;
+}
+
+.game-cell[data-x="6"][data-y="2"] {
+    top: 195px;
+    left: 545px;
+}
+
+.game-cell[data-x="0"][data-y="3"] {
+    top: 280px;
+    left: 18px;
+}
+
+.game-cell[data-x="1"][data-y="3"] {
+    top: 280px;
     left: 104px;
 }
 
-.game-cell[data-x="1"][data-y="2"] {
-    top: 195px;
+.game-cell[data-x="2"][data-y="3"] {
+    top: 280px;
+    left: 195px;
+}
+
+.game-cell[data-x="3"][data-y="3"] {
+    top: 280px;
+    left: 280px;
+}
+
+.game-cell[data-x="4"][data-y="3"] {
+    top: 280px;
+    left: 370px;
+}
+
+.game-cell[data-x="5"][data-y="3"] {
+    top: 280px;
+    left: 455px;
+}
+
+.game-cell[data-x="6"][data-y="3"] {
+    top: 280px;
+    left: 545px;
+}
+
+.game-cell[data-x="0"][data-y="4"] {
+    top: 370px;
+    left: 18px;
+}
+
+.game-cell[data-x="1"][data-y="4"] {
+    top: 370px;
     left: 104px;
 }
 
-.game-cell[data-x="1"][data-y="2"] {
-    top: 195px;
+.game-cell[data-x="2"][data-y="4"] {
+    top: 370px;
+    left: 195px;
+}
+
+.game-cell[data-x="3"][data-y="4"] {
+    top: 370px;
+    left: 280px;
+}
+
+.game-cell[data-x="4"][data-y="4"] {
+    top: 370px;
+    left: 370px;
+}
+
+.game-cell[data-x="5"][data-y="4"] {
+    top: 370px;
+    left: 455px;
+}
+
+.game-cell[data-x="6"][data-y="4"] {
+    top: 370px;
+    left: 545px;
+}
+
+.game-cell[data-x="0"][data-y="5"] {
+    top: 455px;
+    left: 18px;
+}
+
+.game-cell[data-x="1"][data-y="5"] {
+    top: 455px;
     left: 104px;
 }
 
-.game-cell[data-x="1"][data-y="2"] {
-    top: 195px;
-    left: 104px;
+.game-cell[data-x="2"][data-y="5"] {
+    top: 455px;
+    left: 195px;
+}
+
+.game-cell[data-x="3"][data-y="5"] {
+    top: 455px;
+    left: 280px;
+}
+
+.game-cell[data-x="4"][data-y="5"] {
+    top: 455px;
+    left: 370px;
+}
+
+.game-cell[data-x="5"][data-y="5"] {
+    top: 455px;
+    left: 455px;
+}
+
+.game-cell[data-x="6"][data-y="5"] {
+    top: 455px;
+    left: 545px;
 }

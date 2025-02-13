@@ -42,7 +42,9 @@ body {
     padding: 40px 70px;
     background: var(--purple);
     border-radius: 40px;
-    
+    align-items: center;
+    border: solid var(--black);
+    box-shadow:  0px 10px var(--black); 
 }
 
 .select-player-vs-player-button {
@@ -57,7 +59,10 @@ body {
     list-style-type: none;
     background: var(--yellow);
     border-radius: 20px;
-    padding: 15px 15px
+    padding: 15px 15px;
+    width: 400px;
+    border: solid var(--black);
+    box-shadow:  0px 10px var(--black); 
 }
 
 .select-games-rules-button {
@@ -67,10 +72,76 @@ body {
     align-items: center;
     text-transform: uppercase;
     list-style-type: none;
+    color: var(--black);
     background: var(--white) ;
     border-radius: 20px;
-    padding: 15px 15px
+    padding: 15px 15px;
+    margin-top: 30px;
+    width: 400px;
+    border: solid var(--black);
+    box-shadow:  0px 10px var(--black); 
 
+}
+
+.icon-four-games {
+    padding-bottom: 70px;
+    padding-top: 70px;
+}
+
+
+.rules {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen-rules {
+    background: var(--white);
+    width: 412px;
+    border-radius: 40px;
+    padding: 35px;
+    border: solid var(--black);
+    box-shadow:  0px 10px var(--black);
+
+}
+
+.screen-rules h1 {
+    font-family: "Space Grotesk", serif;
+    font-size: 56px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.screen-rules h2 {
+    font-family: "Space Grotesk", serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: var(--purple);
+}
+
+.screen-rules p {
+    font-family: "Space Grotesk", serif;
+    font-size: 16px;
+    color: var(--black);
+}
+
+.screen-rules li {
+    font-family: "Space Grotesk", serif;
+    font-size: 16px;
+    color: var(--black);
+}
+
+.check-rules-cta {
+    list-style-type: none;
+    text-align : center;
+    position: relative;
+    top: 80px;
+}
+
+
+.svg-player {
+    padding-left: 100px;
 }
 
 .game-board {

@@ -1,7 +1,6 @@
 
 const $gameScreenGridCells = document.querySelectorAll(".game-cell")
 
-
 let currentPlayer = "y"
 let gameBoard = [
     ["", "", "", "", "", "", ""],
@@ -32,6 +31,12 @@ $gameScreenGridCells.forEach(function($gameScreenGridCell) {
 
           console.log(gameBoard)
     })
+})
+
+
+$newGameScreenNewGameCpuPlayer.addEventListener("click", function() {
+    $newGameScreen.classList.add("hidden")
+    $gameScreen.classList.remove("hidden")
 })
 
 

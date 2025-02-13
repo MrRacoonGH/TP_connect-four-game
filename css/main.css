@@ -8,7 +8,7 @@
 }
 
 body {
-    background: var(--dark-purple);
+    background: var(--purple);
 }
 
 .game-screen {
@@ -16,13 +16,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .select-menu {
     padding-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width: 632px;
+    /* width: 50%; */
 }
 
 .select-button {
@@ -30,10 +34,12 @@ body {
     font-size: 16px;
     text-transform: uppercase;
     color: var(--white);
-    background: var(--dark-purple);
+    background-color: var(--dark-purple);
     border-radius: 20px;
     border: none;
     padding: 10px 20px;
+    list-style-type: none
+    
 }
 
 .screen-selector-player-menu {
@@ -75,7 +81,7 @@ body {
     color: var(--black);
     background: var(--white) ;
     border-radius: 20px;
-    padding: 15px 15px;
+    padding: 20px 15px;
     margin-top: 30px;
     width: 400px;
     border: solid var(--black);

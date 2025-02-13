@@ -1,6 +1,8 @@
 
 const $gameScreenGridCells = document.querySelectorAll(".game-cell")
 
+
+
 let currentPlayer = "y"
 let gameBoard = [
     ["", "", "", "", "", "", ""],

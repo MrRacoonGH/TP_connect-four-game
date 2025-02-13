@@ -60,6 +60,7 @@ body {
     font-family: "Space Grotesk", serif;
     font-size: 24px;
     font-weight: bold;
+    margin-top: 50px;
     color: var(--black);
     text-transform: uppercase;
     list-style-type: none;
@@ -88,12 +89,6 @@ body {
     box-shadow:  0px 10px var(--black); 
 
 }
-
-.icon-four-games {
-    padding-bottom: 70px;
-    padding-top: 70px;
-}
-
 
 .rules {
     min-height: 100vh;

@@ -1,8 +1,6 @@
 
 const $gameScreenGridCells = document.querySelectorAll(".game-cell")
 
-
-
 let currentPlayer = "y"
 let gameBoard = [
     ["", "", "", "", "", "", ""],
@@ -27,8 +25,15 @@ $gameScreenGridCells.forEach(function($gameScreenGridCell) {
         for (let i = 5; i >= 0; i--) {
             if (gameBoard[i][dataX] === "") {
               gameBoard[i][dataX] = currentPlayer;
-              break;
+
+              if (checkWin(gameBoard, currentPlayer)) {
+                alert(`Le joueur ${currentPlayer} a gagné !`);
+                return;
             }
+
+            currentPlayer = (currentPlayer === "y") ? "r" : "y";
+            break;
+
           }
 
           console.log(gameBoard)
@@ -99,5 +104,6 @@ function checkWin(board, player) {
     }
 
     return false;
+
 }
 

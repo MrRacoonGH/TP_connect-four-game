@@ -35,7 +35,7 @@ $gameScreenGridCells.forEach(function($gameScreenGridCell) {
             break;
 
           }
-
+        }
           console.log(gameBoard)
     })
 })
@@ -45,6 +45,26 @@ $newGameScreenNewGameCpuPlayer.addEventListener("click", function() {
     $newGameScreen.classList.add("hidden")
     $gameScreen.classList.remove("hidden")
 })
+
+// jetons rouge et jaune
+
+function updateBoardDisplay(board) {
+    const cells = document.querySelectorAll(".game-cell");
+    cells.forEach(cell => {
+        const row = parseInt(cell.getAttribute("data-y"));
+        const col = parseInt(cell.getAttribute("data-x"));
+        const value = board[row][col];
+        
+        if (value === "y") {
+            cell.innerHTML = '<img src="path/to/counter-yellow-large.svg" width="70" height="75"/>';
+        } else if (value === "r") {
+            cell.innerHTML = '<img src="path/to/counter-red-large.svg" width="70" height="75"/>';
+        } else {
+            cell.innerHTML = '';
+        }
+    });
+}
+
 
 
 // checkwin

@@ -140,6 +140,10 @@ body {
     top: 80px;
 }
 
+.hidden {
+    display: none !important;
+}
+
 
 .svg-player {
     padding-left: 100px;

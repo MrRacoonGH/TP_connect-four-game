@@ -1,6 +1,8 @@
 
 const $gameScreenGridCells = document.querySelectorAll(".game-cell")
 
+// tableau multidimensionelle/ gameboard
+
 let currentPlayer = "y"
 let gameBoard = [
     ["", "", "", "", "", "", ""],
@@ -11,8 +13,8 @@ let gameBoard = [
     ["", "", "", "", "", "", ""]
 ]
 
-
 console.log(gameBoard)
+
 
 $gameScreenGridCells.forEach(function($gameScreenGridCell) {
     $gameScreenGridCell.innerHTML = ""

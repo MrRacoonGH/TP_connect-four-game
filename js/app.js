@@ -1,9 +1,7 @@
+const $gameScreenGridCells = document.querySelectorAll(".game-cell");
 
-const $gameScreenGridCells = document.querySelectorAll(".game-cell")
-
-// tableau multidimensionelle/ gameboard
-
-let currentPlayer = "y"
+// tableau multidimensionnel / gameboard
+let currentPlayer = "y";
 let gameBoard = [
     ["", "", "", "", "", "", ""],
     ["", "", "", "", "", "", ""],
@@ -11,68 +9,104 @@ let gameBoard = [
     ["", "", "", "", "", "", ""],
     ["", "", "", "", "", "", ""],
     ["", "", "", "", "", "", ""]
-]
+];
 
-console.log(gameBoard)
-
+console.log(gameBoard);
 
 $gameScreenGridCells.forEach(function($gameScreenGridCell) {
-    $gameScreenGridCell.innerHTML = ""
-})
+    $gameScreenGridCell.innerHTML = "";
+});
 
 $gameScreenGridCells.forEach(function($gameScreenGridCell) {
     $gameScreenGridCell.addEventListener("click", function() {
-        const dataX = $gameScreenGridCell.getAttribute("data-x")
+        const dataX = $gameScreenGridCell.getAttribute("data-x");
 
         for (let i = 5; i >= 0; i--) {
             if (gameBoard[i][dataX] === "") {
-              gameBoard[i][dataX] = currentPlayer;
+                gameBoard[i][dataX] = currentPlayer;
+                updateBoardDisplay(gameBoard); 
+                // Met à jour l'affichage des jetons
 
-              if (checkWin(gameBoard, currentPlayer)) {
-                alert(`Le joueur ${currentPlayer} a gagné !`);
-                return;
+                if (checkWin(gameBoard, currentPlayer)) {
+                    alert(`Le joueur ${currentPlayer} a gagné !`);
+                    return;
+                }
+
+                currentPlayer = (currentPlayer === "y") ? "r" : "y";
+                break;
             }
-
-            currentPlayer = (currentPlayer === "y") ? "r" : "y";
-            break;
-
-          }
         }
-          console.log(gameBoard)
-    })
-})
-
+        console.log(gameBoard);
+    });
+});
 
 $newGameScreenNewGameCpuPlayer.addEventListener("click", function() {
-    $newGameScreen.classList.add("hidden")
-    $gameScreen.classList.remove("hidden")
-})
+    $newGameScreen.classList.add("hidden");
+    $gameScreen.classList.remove("hidden");
+});
 
-// jetons rouge et jaune
-
+// Jetons rouge et jaune
 function updateBoardDisplay(board) {
     const cells = document.querySelectorAll(".game-cell");
     cells.forEach(cell => {
         const row = parseInt(cell.getAttribute("data-y"));
         const col = parseInt(cell.getAttribute("data-x"));
         const value = board[row][col];
-        
+
         if (value === "y") {
-            cell.innerHTML = '<img src="path/to/counter-yellow-large.svg" width="70" height="75"/>';
+            cell.innerHTML = `
+                <svg width="70px" height="75px" viewBox="0 0 70 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>counter-yellow-large</title>
+                    <defs>
+                        <circle id="path-1" cx="35" cy="35" r="32"></circle>
+                        <filter x="-3.9%" y="-3.9%" width="107.8%" height="107.8%" filterUnits="objectBoundingBox" id="filter-2">
+                            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+                            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+                            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+                        </filter>
+                    </defs>
+                    <g id="Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="counter-yellow-large">
+                            <circle id="Oval-Copy-35" fill="#000000" cx="35" cy="35" r="35"></circle>
+                            <circle id="Oval-Copy-36" fill="#000000" cx="35" cy="40" r="35"></circle>
+                            <g id="Oval-Copy-35">
+                                <use fill="#FFCE67" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </svg>`;
         } else if (value === "r") {
-            cell.innerHTML = '<img src="path/to/counter-red-large.svg" width="70" height="75"/>';
+            cell.innerHTML = `
+                <svg width="70px" height="75px" viewBox="0 0 70 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>counter-red-large</title>
+                    <defs>
+                        <circle id="path-1" cx="35" cy="35" r="32"></circle>
+                        <filter x="-3.9%" y="-3.9%" width="107.8%" height="107.8%" filterUnits="objectBoundingBox" id="filter-2">
+                            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+                            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+                            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+                        </filter>
+                    </defs>
+                    <g id="Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="counter-red-large">
+                            <circle id="Oval-Copy-41" fill="#000000" cx="35" cy="35" r="35"></circle>
+                            <circle id="Oval-Copy-42" fill="#000000" cx="35" cy="40" r="35"></circle>
+                            <g id="Oval-Copy-43">
+                                <use fill="#FD6687" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </svg>`;
         } else {
             cell.innerHTML = '';
         }
     });
 }
 
-
-
-// checkwin
-
+// Check win
 function checkWin(board, player) {
-
     for (let row = 0; row < 6; row++) {
         for (let col = 0; col < 4; col++) {
             if (
@@ -87,7 +121,7 @@ function checkWin(board, player) {
     }
 
     for (let row = 0; row < 3; row++) {
-        for (let col = 0; col < 7; col++) {
+        for (let col = 7; col >= 0; col--) {
             if (
                 board[row][col] === player &&
                 board[row + 1][col] === player &&
@@ -126,6 +160,4 @@ function checkWin(board, player) {
     }
 
     return false;
-
 }
-

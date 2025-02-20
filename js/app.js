@@ -40,10 +40,6 @@ $gameScreenGridCells.forEach(function($gameScreenGridCell) {
     });
 });
 
-$newGameScreenNewGameCpuPlayer.addEventListener("click", function() {
-    $newGameScreen.classList.add("hidden");
-    $gameScreen.classList.remove("hidden");
-});
 
 // Jetons rouge et jaune
 function updateBoardDisplay(board) {
@@ -160,4 +156,42 @@ function checkWin(board, player) {
     }
 
     return false;
+}
+
+
+// cacher les section (fait a l'aide de copilot)
+
+const mainMenu = document.querySelector(".main-menu");
+const gameboard = document.querySelector(".gameboard");
+const rulesScreen = document.querySelector(".rules");
+const playerVsPlayerButton = document.querySelector(".select-player-vs-player-button");
+const gamesRulesButton = document.querySelector(".select-games-rules-button");
+const checkRulesCtaButtons = document.querySelectorAll(".check-rules-cta");
+
+// Vérification que les éléments existent
+if (playerVsPlayerButton && gamesRulesButton && mainMenu && gameboard && rulesScreen && checkRulesCtaButtons) {
+    playerVsPlayerButton.addEventListener("click", function () {
+        console.log("Player vs Player button clicked");
+        mainMenu.classList.add("hidden");
+        gameboard.classList.remove("hidden");
+        rulesScreen.classList.add("hidden");
+    });
+
+    gamesRulesButton.addEventListener("click", function () {
+        console.log("Games Rules button clicked");
+        mainMenu.classList.add("hidden");
+        gameboard.classList.add("hidden");
+        rulesScreen.classList.remove("hidden");
+    });
+
+    checkRulesCtaButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            console.log("Check Rules CTA button clicked");
+            gameboard.classList.add("hidden");
+            rulesScreen.classList.add("hidden");
+            mainMenu.classList.remove("hidden");
+        });
+    });
+} else {
+    console.log("One or more elements not found");
 }

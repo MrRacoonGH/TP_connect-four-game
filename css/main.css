@@ -38,7 +38,8 @@ body {
     border-radius: 20px;
     border: none;
     padding: 10px 20px;
-    list-style-type: none
+    list-style-type: none;
+    cursor: pointer;
     
 }
 
@@ -70,6 +71,7 @@ body {
     width: 400px;
     border: solid var(--black);
     box-shadow:  0px 10px var(--black); 
+    cursor: pointer;
 }
 
 .select-games-rules-button {
@@ -87,6 +89,7 @@ body {
     width: 400px;
     border: solid var(--black);
     box-shadow:  0px 10px var(--black); 
+    cursor: pointer;
 
 }
 
@@ -144,6 +147,48 @@ body {
     display: none !important;
 }
 
+
+/* pause */
+
+.title-pause {
+    font-family: "Space Grotesk", serif;
+    font-size: 56px;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.button-pause {
+    font-family: "Space Grotesk", serif;
+    font-size: 24px;
+    font-weight: bold;
+    align-items: center;
+    text-transform: uppercase;
+    justify-content: center;
+    list-style-type: none;
+    color: var(--black);
+    background: var(--white) ;
+    border-radius: 20px;
+    padding: 20px 15px;
+    margin-top: 30px;
+    width: 400px;
+    border: solid var(--black);
+    box-shadow:  0px 10px var(--black); 
+}
+
+.continue-game-button {
+    background: var(--white) ;
+    cursor: pointer;
+}
+
+.restart-game-button {
+    background: var(--white) ;
+    cursor: pointer;
+}
+
+.quit-game-button {
+    background: var(--red) ;
+    cursor: pointer;
+}
 
 .svg-player {
     padding-left: 100px;

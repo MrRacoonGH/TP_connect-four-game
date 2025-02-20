@@ -11,6 +11,11 @@ body {
     background: var(--purple);
 }
 
+.gameboard-complet-screen {
+    display: flex;
+    align-items: center;
+}
+
 .game-screen {
     min-height: 100vh;
     display: flex;
@@ -188,6 +193,54 @@ body {
 .quit-game-button {
     background: var(--red) ;
     cursor: pointer;
+}
+
+/* score player  */
+
+.score-player-one {
+    text-align: center;
+    width: 140px;
+    height: 160px;
+    border-radius: 20px;
+    background-color: var(--white);
+    border: solid var(--black);
+    box-shadow:  0px 10px var(--black); 
+    margin-right: 60px ;
+}
+
+.score-player-one p {
+    font-weight: bold;
+    font-family: "Space Grotesk", serif;
+    text-transform: uppercase;
+}
+
+.score-player-one-svg {
+    position: relative;
+    left: 40px;
+    top: -30px;
+}
+
+.score-player-two {
+    text-align: center;
+    width: 140px;
+    height: 160px;
+    border-radius: 20px;
+    background-color: var(--white);
+    border: solid var(--black);
+    box-shadow:  0px 10px var(--black); 
+    margin-left: 60px ;
+}
+
+.score-player-two p {
+    font-weight: bold;
+    font-family: "Space Grotesk", serif;
+    text-transform: uppercase;
+}
+
+.score-player-two-svg {
+    position: relative;
+    left: 40px;
+    top: -30px; 
 }
 
 .svg-player {

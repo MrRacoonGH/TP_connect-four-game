@@ -161,36 +161,42 @@ function checkWin(board, player) {
 
 // cacher les section (fait a l'aide de copilot)
 
-const mainMenu = document.querySelector(".main-menu");
-const gameboard = document.querySelector(".gameboard");
-const rulesScreen = document.querySelector(".rules");
-const playerVsPlayerButton = document.querySelector(".select-player-vs-player-button");
-const gamesRulesButton = document.querySelector(".select-games-rules-button");
-const checkRulesCtaButtons = document.querySelectorAll(".check-rules-cta");
+const elements = {
+    mainMenu: document.querySelector(".main-menu"),
+    gameboard: document.querySelector(".gameboard"),
+    rulesScreen: document.querySelector(".rules"),
+    playerVsPlayerButton: document.querySelector(".select-player-vs-player-button"),
+    gamesRulesButton: document.querySelector(".select-games-rules-button"),
+    checkRulesCtaButtons: document.querySelectorAll(".check-rules-cta"),
+    menuSelect: document.querySelector(".menu-select") // Ajout du sélecteur "menu-select"
+};
 
-// Vérification que les éléments existent
-if (playerVsPlayerButton && gamesRulesButton && mainMenu && gameboard && rulesScreen && checkRulesCtaButtons) {
-    playerVsPlayerButton.addEventListener("click", function () {
+function toggleDisplay(elementsToShow, elementsToHide) {
+    elementsToShow.forEach(el => el.classList.remove("hidden"));
+    elementsToHide.forEach(el => el.classList.add("hidden"));
+}
+
+if (Object.values(elements).every(el => el)) {
+    elements.playerVsPlayerButton.addEventListener("click", function () {
         console.log("Player vs Player button clicked");
-        mainMenu.classList.add("hidden");
-        gameboard.classList.remove("hidden");
-        rulesScreen.classList.add("hidden");
+        toggleDisplay([elements.gameboard], [elements.mainMenu, elements.rulesScreen]);
     });
 
-    gamesRulesButton.addEventListener("click", function () {
+    elements.gamesRulesButton.addEventListener("click", function () {
         console.log("Games Rules button clicked");
-        mainMenu.classList.add("hidden");
-        gameboard.classList.add("hidden");
-        rulesScreen.classList.remove("hidden");
+        toggleDisplay([elements.rulesScreen], [elements.mainMenu, elements.gameboard]);
     });
 
-    checkRulesCtaButtons.forEach(button => {
+    elements.checkRulesCtaButtons.forEach(button => {
         button.addEventListener("click", function () {
             console.log("Check Rules CTA button clicked");
-            gameboard.classList.add("hidden");
-            rulesScreen.classList.add("hidden");
-            mainMenu.classList.remove("hidden");
+            toggleDisplay([elements.mainMenu], [elements.gameboard, elements.rulesScreen]);
         });
+    });
+
+    elements.menuSelect.addEventListener("click", function () {
+        console.log("Menu Select clicked");
+        toggleDisplay([elements.mainMenu], [elements.gameboard, elements.rulesScreen]);
     });
 } else {
     console.log("One or more elements not found");
